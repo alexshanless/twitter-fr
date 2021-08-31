@@ -1,0 +1,61 @@
+#container {
+  width: 100vw;
+  display: flex;
+  height: 100vh;
+}
+
+.center {
+  background-color: lightgreen;
+  width: 50vw;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  margin: auto;
+}
+
+.header {
+  background-color: lightseagreen;
+  width: 100vw;
+  height: 50vh;
+}
+
+.cover-pic {
+  background-color: lightslategray;
+  width: 100vw;
+  height: 28vh;
+  position: relative;
+}
+
+.name {
+  position: absolute;
+  margin-top: 0;
+  background-color: white;
+  width: 100%;
+  height: 60px;
+}
+
+.name h1 {
+  margin-left: 75px;
+  height: 50%;
+  top: 0;
+  font-size: 20px;
+}
+
+.name p {
+  margin-left: 75px;
+  position: absolute;
+  top: 20px;
+  padding-top: 5px;
+}
+
+.profile-picture {
+  position: absolute;
+  background-color: lightgoldenrodyellow;
+  width: 200px;
+  height: 200px;
+  top: 67%;
+  z-index: 100;
+  border-radius: 100%;
+  margin-left: 15px;
+  border: 5px solid white;
+}
