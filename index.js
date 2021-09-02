@@ -45,3 +45,38 @@ var user2 = {
     },
   ],
 };
+
+var container = document.getElementById("container");
+
+container.innerHTML = `<div class="center">
+<div class="header">
+  <div class="cover-pic">
+    <div class="name">
+      <h1>${user1.displayName}</h1>
+      <p>${user1.tweets.length} tweets</p>
+    </div>
+    <img src=${user1.coverPhotoURL} alt="cover" />
+  </div>
+  <div class="profile-picture"><img src=${user1.avatarURL} alt="profile" /></div>
+  <div class="info">
+    <div class="details">
+      <h2>${user1.displayName}</h2>
+      <p>${user1.userName}</p>
+      <p>Joined ${user1.joinedDate}</p>
+      <div class="followers-ctr">
+        <p><strong>${user1.followingCount} &nbsp;</strong>Following</p>
+        <p><strong>${user1.followerCount} &nbsp;</strong>Followers</p>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<div class="tweets">
+<div class="link-ctr">
+<div class="tab"> <a href="#">Tweets</a></div>
+<div class="tab"> <a href="#">Tweets & replies</div>
+<div class="tab"> <a href="#">Media</div>
+<div class="tab"> <a href="#">Likes</div>
+</div>
+</div>
+</div>`;
