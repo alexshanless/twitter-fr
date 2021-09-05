@@ -6,31 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div id="container">
       <div class="header-container">
-        <div class="left-arrow"><img src="./assets/arrow-left.png" alt=""></div>
+        <div class="left-arrow">
+          <img src="./assets/arrow-left.png" alt="" />
+        </div>
         <div class="top-name">
           <div class="display-name">Elon Musk</div>
-          <p id="num-of-tweets" > 5 tweets</p>
+          <p id="num-of-tweets">5 tweets</p>
         </div>
       </div>
       <div class="cover-photo-container">
         <div class="cover-img">
-          <img src="./assets/elonmusk-cover.jpeg" alt="cover"></div>
+          <img src="./assets/elonmusk-cover.jpeg" alt="cover" />
         </div>
+      </div>
       <div class="profile-details">
         <div class="profile-wrapper">
           <div class="avatar-img">
-            <img src="./assets/elonmusk.jpg" alt="">
+            <img src="./assets/elonmusk.jpg" alt="" />
           </div>
           <div class="follow-button">
             <button>Follow</button>
           </div>
         </div>
         <div class="profile-info">
-          <p class="display-name"> Elon Musk</p>
+          <p class="display-name">Elon Musk</p>
         </div>
         <div class="user-name">
           <p>@elonmusk</p>
@@ -38,17 +48,53 @@
         <div class="date-joined">
           <p>Joined June 2019</p>
         </div>
-      </div>
-
-        <div class="tweets">
-          <div class="link-ctr">
-           <div class="tab"> <a href="#">Tweets</a></div>
-           <div class="tab"> <a href="#">Tweets & replies</div>
-           <div class="tab"> <a href="#">Media</div>
-           <div class="tab"> <a href="#">Likes</div>
+        <div class="followers-ctr">
+          <div class="following">
+            <p><a href="#">103</a>Following</p>
+          </div>
+          <div class="followers">
+            <p><a href="#">47.9M</a>Followers</p>
           </div>
         </div>
       </div>
+
+      <div class="tweets">
+        <div class="link-ctr">
+          <div class="tab active"><a href="#">Tweets</a></div>
+          <div class="tab"><a href="#">Tweets & replies</a></div>
+          <div class="tab"><a href="#">Media</a></div>
+          <div class="tab"><a href="#">Likes</a></div>
+        </div>
+      </div>
+      <div class="container-tweets">
+        <div class="tweet-div">
+          <div class="tweet-avatar">
+            <img src="./assets/elonmusk.jpg" alt="" />
+          </div>
+          <div class="twitt-ctr">
+            <div class="tweet-details">
+              <div class="tweet-display-name">
+                <p>Elon Musk</p>
+              </div>
+              <div class="user-name">@elonmusk</div>
+              <div class="tweet-created">Oct 2</div>
+            </div>
+            <div class="tweet-body">
+              <p>I admit judging books by their cover</p>
+            </div>
+            <div class="tweet-icons">
+              <i class="far fa-comment"></i>
+              <p>5.2k</p>
+              <i class="fas fa-retweet"></i>
+              <p>7.7k</p>
+              <i class="far fa-heart"></i>
+              <p>65.2k</p>
+              <i class="far fa-share-square"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="index.js"></script>
 </html>

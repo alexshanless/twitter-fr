@@ -16,6 +16,7 @@ body {
 #container {
   min-width: 500px;
   max-width: 650px;
+  border: 1px solid lightgrey;
 }
 
 .header-container {
@@ -96,9 +97,38 @@ button {
   vertical-align: middle;
 }
 
+.date-joined {
+  padding: 5px 0;
+}
+
+.followers-ctr {
+  display: flex;
+  padding: 10px 0;
+}
+
+.following {
+  padding-right: 15px;
+}
+
+.following a {
+  color: black;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding-right: 5px;
+}
+
+.followers a {
+  color: black;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding-right: 5px;
+}
+
 .link-ctr {
   display: flex;
-  margin: 0 -15px;
+
   border-bottom: 1px solid lightgray;
 }
 
@@ -114,9 +144,63 @@ button {
 
 .tab a {
   text-decoration: none;
-  color: grey;
 }
 
 .tab:hover {
-  background-color: lightblue;
+  background-color: rgba(29, 161, 242, 0.1);
+  cursor: pointer;
+}
+
+.active {
+  color: #1d9ae7;
+  border-bottom: 2px solid #1d9ae7;
+}
+
+.container-tweets {
+  display: flex;
+  font-display: column;
+}
+
+.tweet-div {
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  border-bottom: 1px solid #9cadb9;
+}
+
+.tweet-avatar {
+  padding: 0 10px 15px 15px;
+}
+
+.tweet-avatar img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.tweet-details {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-display-name p {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-right: 5px;
+}
+
+.tweet-created {
+  margin-left: 5px;
+  color: #808080;
+}
+
+.tweet-body {
+  padding-top: 5px;
+}
+
+.tweet-icons {
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  color: #808080;
 }
