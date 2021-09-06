@@ -54,6 +54,10 @@ body {
   height: 70px;
 }
 
+.profile-details {
+  margin-left: 5px;
+}
+
 .avatar-img {
   position: relative;
   top: -60px;
@@ -128,7 +132,6 @@ button {
 
 .link-ctr {
   display: flex;
-
   border-bottom: 1px solid lightgray;
 }
 

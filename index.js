@@ -46,37 +46,126 @@ var user2 = {
   ],
 };
 
-var container = document.getElementById("container");
+var urlParams = new URLSearchParams(window.location.search);
+var headerContainer = document.getElementById("header-container");
+var tweetContainer = document.getElementById("tweet-container");
+var users = [user1, user2];
+var userIndex = 0;
 
-// container.innerHTML = `<div class="center">
-// <div class="header">
-//   <div class="cover-pic">
-//     <div class="name">
-//       <h1>${user1.displayName}</h1>
-//       <p>${user1.tweets.length} tweets</p>
-//     </div>
-//     <img src=${user1.coverPhotoURL} alt="cover" />
-//   </div>
-//   <div class="profile-picture"><img src=${user1.avatarURL} alt="profile" /></div>
-//   <div class="info">
-//     <div class="details">
-//       <h2>${user1.displayName}</h2>
-//       <p>${user1.userName}</p>
-//       <p>Joined ${user1.joinedDate}</p>
-//       <div class="followers-ctr">
-//         <p><strong>${user1.followingCount} &nbsp;</strong>Following</p>
-//         <p><strong>${user1.followerCount} &nbsp;</strong>Followers</p>
-//       </div>
-//     </div>
+function userElon() {
+  var urlParams = new URLSearchParams();
+  urlParams.set("user", "user1");
+  window.location.href =
+    "https://alexshanless.github.io/twitter-fr/?" + urlParams.toString();
+}
 
-//   </div>
-// </div>
-// <div class="tweets">
-// <div class="link-ctr">
-// <div class="tab"> <a href="#">Tweets</a></div>
-// <div class="tab"> <a href="#">Tweets & replies</div>
-// <div class="tab"> <a href="#">Media</div>
-// <div class="tab"> <a href="#">Likes</div>
-// </div>
-// </div>
-// </div>`;
+function userBill() {
+  var urlParams = new URLSearchParams();
+  urlParams.set("user", "user2");
+  window.location.href =
+    "https://alexshanless.github.io/twitter-fr/?" + urlParams.toString();
+}
+
+if (urlParams.toLocaleString() == "user=user1") {
+  userIndex = 0;
+} else {
+  userIndex = 1;
+}
+
+for (var i = 0; i < user1.tweets.length; i++) {
+  var tweet = user1.tweets[i];
+  var tweetValues = Object.values(tweet);
+  console.log(tweetValues);
+
+  var tweetDiv = document.createElement("div");
+  tweetDiv.classList.add("tweet-div");
+  tweetDiv.innerHTML = `
+      <div class="tweet-avatar"><img src="${users[userIndex].avatarURL}"/></div>
+      <div class="tweet-inner-container">
+          <div class="tweet-details">
+              <div class="tweet-display-name">
+                  <p>${users[userIndex].displayName}
+                      
+                  </p>
+              </div>
+              <div class="user-name">${users[userIndex].userName}</div>
+              <div class="tweet-created">Posted on ${tweetValues[1]}</div>
+          </div>
+          <div class="tweet-body">
+              <p>${tweetValues[0]}</p>
+          </div>
+    <div class="tweet-icons">
+      <i class="far fa-comment"></i>
+      <p>5.2k</p>
+      <i class="fas fa-retweet"></i>
+      <p>7.7k</p>
+      <i class="far fa-heart"></i>
+      <p>65.2k</p>
+      <i class="far fa-share-square"></i>
+    </div>
+  </div>
+</div>`;
+  tweetContainer.appendChild(tweetDiv);
+}
+
+headerContainer.innerHTML = ` <div class="header-container">
+<div class="left-arrow">
+  <img src="./assets/arrow-left.png" alt="left" />
+</div>
+<div class="top-name">
+  <div class="display-name">${users[userIndex].displayName}</div>
+  <p id="num-of-tweets">${users[userIndex].tweets.length} tweets</p>
+</div>
+</div>
+<div class="cover-photo-container">
+<div class="cover-img">
+  <img src=${users[userIndex].coverPhotoURL} alt="cover" />
+</div>
+</div>
+<div class="profile-details">
+<div class="profile-wrapper">
+  <div class="avatar-img">
+    <img src=${users[userIndex].avatarURL} alt="" />
+  </div>
+  <div class="follow-button">
+    <button>Follow</button>
+  </div>
+</div>
+<div class="profile-info">
+  <p class="display-name">${users[userIndex].displayName}</p>
+</div>
+<div class="user-name">
+  <p>${users[userIndex].userName}</p>
+</div>
+<div class="date-joined">
+  <p>Joined ${users[userIndex].joinedDate}</p>
+</div>
+<div class="followers-ctr">
+  <div class="following">
+    <p><a href="#">${users[userIndex].followingCount}</a>Following</p>
+  </div>
+  <div class="followers">
+    <p><a href="#">${users[userIndex].followerCount}</a>Followers</p>
+  </div>
+</div>
+</div>
+
+<div class="tweets">
+<div class="link-ctr">
+  <div class="tab active"><a href="#">Tweets</a></div>
+  <div class="tab"><a href="#">Tweets & replies</a></div>
+  <div class="tab"><a href="#">Media</a></div>
+  <div class="tab"><a href="#">Likes</a></div>
+</div>
+</div>
+</div>`;
+
+var tabs = document.getElementsByClassName("tab");
+
+for (var i = 0; i < tabs.length; i++) {
+  tabs[i].addEventListener("click", function () {
+    var active = document.getElementsByClassName("active");
+    active[0].className = active[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
