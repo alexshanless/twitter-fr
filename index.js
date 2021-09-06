@@ -25,7 +25,7 @@ var user1 = {
 var user2 = {
   userName: "@BillGates",
   displayName: "Bill Gates",
-  joinedDate: "June 2009",
+  joinedDate: "May 2009",
   followingCount: 274,
   followerCount: 53800000,
   avatarURL: "assets/billgates.jpg",
@@ -73,9 +73,8 @@ if (urlParams.toLocaleString() == "user=user1") {
 }
 
 for (var i = 0; i < user1.tweets.length; i++) {
-  var tweet = user1.tweets[i];
+  var tweet = users[userIndex].tweets[i];
   var tweetValues = Object.values(tweet);
-  console.log(tweetValues);
 
   var tweetDiv = document.createElement("div");
   tweetDiv.classList.add("tweet-div");
@@ -130,6 +129,10 @@ headerContainer.innerHTML = ` <div class="header-container">
   <div class="follow-button">
     <button>Follow</button>
   </div>
+  <div class="switch-profiles">
+  <button id="elon-button">Elon</button>
+  <button id="bill-button">Bill</button>
+  </div>
 </div>
 <div class="profile-info">
   <p class="display-name">${users[userIndex].displayName}</p>
@@ -160,6 +163,7 @@ headerContainer.innerHTML = ` <div class="header-container">
 </div>
 </div>`;
 
+//active link switch
 var tabs = document.getElementsByClassName("tab");
 
 for (var i = 0; i < tabs.length; i++) {
@@ -169,3 +173,10 @@ for (var i = 0; i < tabs.length; i++) {
     this.className += " active";
   });
 }
+
+//profile switch
+var switchElon = document.getElementById("elon-button");
+switchElon.addEventListener("click", userElon);
+
+var switchBill = document.getElementById("bill-button");
+switchBill.addEventListener("click", userBill);
